@@ -13,13 +13,11 @@ public class BuyerDAO {
     @Autowired
     private IBuyerRespository repository;
 
-    public void createBuyer(Buyer buyer) { repository.insert(buyer); }
-
     public List<Buyer> getBuyers() { return repository.findAll(); }
 
     public Buyer getBuyer(String id) { return repository.findById(id).orElse(null); }
 
-    public void updateBuyer(Buyer buyer) { repository.save(buyer); }
+    public void processBuyer(Buyer buyer) { repository.save(buyer); }
 
     public void deleteBuyer(String id) { repository.deleteById(id); }
 

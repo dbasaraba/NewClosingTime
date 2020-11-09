@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset = "UTF-8">
+        <title>Sign Up</title>
+
+    </head>
+
+    <body>
+
+        <h1>Create if doesn't exist or else edit buyer</h1>
+
+        <form action="#" th:action="@{/buyers/process}" th:object="${buyer}" method="post">
+            <label>First Name: </label>
+            <input type="text" th:field="*{firstName}"/> <br/>
+            <label>Last Name: </label>
+            <input type="text" th:field="*{lastName}"/> <br/>
+            <label>Email: </label>
+            <input type="text" th:field="*{email}"/> <br/>
+
+            <input type="submit" value="Submit"/>
+        </form>
+
+    </body>
+
+</html>
