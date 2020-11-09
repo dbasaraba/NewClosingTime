@@ -34,10 +34,11 @@ public class BuyerController {
     @RequestMapping("/buyers/edit/{id}") // render edit page for buyer
     public String editBuyer(@PathVariable("id") String id, Model model) {
         model.addAttribute("buyer", buyerDAO.getBuyer(id));
+        buyerDAO.deleteBuyer(id);
         return "buyer/buyerForm";
     }
 
-    @RequestMapping("/buyers/process") // create or edit new buyer
+    @PostMapping("/buyers/process") // create or edit new buyer
     public String processBuyer(@ModelAttribute Buyer buyer) {
         buyerDAO.processBuyer(buyer);
         return "redirect:/buyers";
