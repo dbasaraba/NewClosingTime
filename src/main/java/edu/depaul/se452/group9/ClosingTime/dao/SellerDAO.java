@@ -13,8 +13,12 @@ public class SellerDAO {
     @Autowired
     private ISellerRepository repository;
 
-    public Seller createSeller(Seller seller) { return repository.insert(seller); }
+    public List<Seller> getSellers() { return repository.findAll(); }
 
-    public List<Seller> getSellers() {return repository.findAll(); }
+    public Seller getSeller(String id) { return repository.findById(id).orElse(null); }
+
+    public void processSeller(Seller seller) { repository.save(seller); }
+
+    public void deleteSeller(String id) { repository.deleteById(id); }
 
 }

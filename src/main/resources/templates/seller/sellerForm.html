@@ -5,15 +5,15 @@
     <head>
 
         <meta charset = "UTF-8">
-        <title>Create/Update Buyer</title>
+        <title>Create/Update Seller</title>
 
     </head>
 
     <body>
 
-        <h1>Create/Update Buyer</h1>
+        <h1>Create/Update Seller</h1>
 
-        <form action="#" th:action="@{/buyers/process}" th:object="${buyer}" method="post">
+        <form action="#" th:action="@{/sellers/process}" th:object="${seller}" method="post">
             <label>First Name: </label>
             <input type="text" th:field="*{firstName}"/> <br/>
             <label>Last Name: </label>
