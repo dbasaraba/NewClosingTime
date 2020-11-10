@@ -13,8 +13,12 @@ public class PropertyDAO {
     @Autowired
     private IPropertyRepository repository;
 
-    public Property createProperty(Property property) { return repository.insert(property); }
+    public List<Property> getProperties() { return repository.findAll(); }
 
-    public List<Property> getProperties() {return repository.findAll(); }
+    public Property getProperty(String id) { return repository.findById(id).orElse(null); }
+
+    public void processProperty(Property property) { repository.save(property); }
+
+    public void deleteProperty(String id) { repository.deleteById(id); }
 
 }

@@ -15,6 +15,9 @@
         <h3 th:text="${seller.firstName}"></h3>
         <h3 th:text="${seller.lastName}"></h3>
         <h3 th:text="${seller.email}"></h3>
+        <ul th:each="property : ${seller.properties}">
+            <li th:text="${property.streetAddress}"></li>
+        </ul>
         <a href="#" th:href="@{/sellers/edit/{id}(id=${seller.id})}"><button>Edit details</button> </a>
         <a href="#" th:href="@{/sellers/delete/{id}(id=${seller.id})}" methods="delete">
             <button>Delete Profile</button> </a>

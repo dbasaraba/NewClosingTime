@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset = "UTF-8">
+        <title th:text="${property.streetAddress}"></title>
+
+    </head>
+
+    <body>
+
+        <h1>Property:</h1>
+        <h3 th:text="${property.state}"></h3>
+        <h3 th:text="${property.city}"></h3>
+        <h3 th:text="${property.streetAddress}"></h3>
+        <h3 th:text="${property.askingPrice}"></h3>
+        <a href="#" th:href="@{/properties/edit/{id}(id=${property.id})}"><button>Edit details</button> </a>
+        <a href="#" th:href="@{/properties/delete/{id}(id=${property.id})}" methods="delete">
+            <button>Delete Property</button> </a>
+
+    </body>
+
+</html>
