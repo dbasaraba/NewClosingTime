@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset = "UTF-8">
+        <title>Closing Time - Messengers</title>
+
+    </head>
+
+    <body>
+
+        <h1>Messenger Controller</h1>
+
+        <table>
+            <tr>
+                <th>id: </th>
+                <th>Message: </th>
+            </tr>
+
+            <tr th:each="messenger : ${messengers}">
+                <td th:text="${messenger.id}"></td>
+                <td th:text="${messenger.messageBody}"></td>
+                <td> <a href="#" th:href="@{/messengers/{id}(id=${messenger.id})}">
+                    <button>See messenger details</button> </a> </td>
+            </tr>
+        </table> <br/>
+
+        <a href="#" th:href="@{/messengers/new}"><button>Create Messenger</button> </a>
+
+    </body>
+
+</html>

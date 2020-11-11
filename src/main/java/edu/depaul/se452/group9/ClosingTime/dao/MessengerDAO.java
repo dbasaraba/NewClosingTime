@@ -13,8 +13,12 @@ public class MessengerDAO {
     @Autowired
     private IMessengerRepository repository;
 
-    public Messenger createMessenger(Messenger messenger) { return repository.insert(messenger); }
-
     public List<Messenger> getMessengers() { return repository.findAll(); }
+
+    public Messenger getMessenger(String id) { return repository.findById(id).orElse(null); }
+
+    public void processMessenger(Messenger messenger) { repository.save(messenger); }
+
+    public void deleteMessenger(String id) { repository.deleteById(id); }
 
 }

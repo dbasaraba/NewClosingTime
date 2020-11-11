@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset = "UTF-8">
+        <title>Offer</title>
+
+    </head>
+
+    <body>
+
+        <h1>Offer</h1>
+        <h3 th:text="${offer.offer}"></h3>
+        <a href="#" th:href="@{/offers/edit/{id}(id=${offer.id})}"><button>Edit details</button> </a>
+        <a href="#" th:href="@{/offers/delete/{id}(id=${offer.id})}" methods="delete">
+        <button>Delete Profile</button> </a>
+
+    </body>
+
+</html>

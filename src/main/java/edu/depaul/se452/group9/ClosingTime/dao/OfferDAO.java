@@ -13,8 +13,12 @@ public class OfferDAO {
     @Autowired
     private IOfferRepository repository;
 
-    public Offer createOffer(Offer offer) { return repository.insert(offer); }
+    public List<Offer> getOffers() { return repository.findAll(); }
 
-    public List<Offer> getOffers() {return repository.findAll(); }
+    public Offer getOffer(String id) { return repository.findById(id).orElse(null); }
+
+    public void processOffer(Offer offer) { repository.save(offer); }
+
+    public void deleteOffer(String id) { repository.deleteById(id); }
 
 }

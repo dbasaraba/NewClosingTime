@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset = "UTF-8">
+        <title>Messenger</title>
+
+    </head>
+
+    <body>
+
+        <h1>Messenger</h1>
+        <h3 th:text="${messenger.messageBody}"></h3>
+        <a href="#" th:href="@{/messengers/edit/{id}(id=${messenger.id})}"><button>Edit details</button> </a>
+        <a href="#" th:href="@{/messengers/delete/{id}(id=${messenger.id})}" methods="delete">
+            <button>Delete Profile</button> </a>
+
+    </body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset = "UTF-8">
+        <title>Create/Update Offer</title>
+
+    </head>
+
+    <body>
+
+        <h1>Create/Update Offer</h1>
+
+        <form action="#" th:action="@{/offers/process}" th:object="${offer}" method="post">
+            <label>First Name: </label>
+            <input type="text" th:field="*{offer}"/> <br/>
+
+            <input type="submit" value="Submit"/>
+        </form>
+
+    </body>
+
+</html>

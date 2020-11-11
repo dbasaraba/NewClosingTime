@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset = "UTF-8">
+        <title>Create/Update Messenger</title>
+
+    </head>
+
+    <body>
+
+        <h1>Create/Update Messenger</h1>
+
+        <form action="#" th:action="@{/messengers/process}" th:object="${messenger}" method="post">
+            <label>Message: </label>
+            <input type="text" th:field="*{messageBody}"/> <br/>
+
+            <input type="submit" value="Submit"/>
+        </form>
+
+    </body>
+
+</html>

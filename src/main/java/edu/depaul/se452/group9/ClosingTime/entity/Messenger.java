@@ -8,14 +8,12 @@ import lombok.Getter;
 
 @Document(collection = "Messenger")
 @Data
-public class Messenger{
+public class Messenger {
 
     @Id
     @Getter
     private String id;
 
-    private String buyerID;
-    private String sellerID;
     private String messageBody;
 
 }
