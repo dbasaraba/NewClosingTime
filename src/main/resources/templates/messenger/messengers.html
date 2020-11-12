@@ -16,18 +16,20 @@
         <table>
             <tr>
                 <th>id: </th>
-                <th>Message: </th>
+                <th>title: </th>
+                <th>message: </th>
             </tr>
 
             <tr th:each="messenger : ${messengers}">
                 <td th:text="${messenger.id}"></td>
-                <td th:text="${messenger.messageBody}"></td>
+                <td th:text="${messenger.title}"></td>
+                <td th:text="${messenger.body}"></td>
                 <td> <a href="#" th:href="@{/messengers/{id}(id=${messenger.id})}">
-                    <button>See messenger details</button> </a> </td>
+                    <button>See message details</button> </a> </td>
             </tr>
         </table> <br/>
 
-        <a href="#" th:href="@{/messengers/new}"><button>Create Messenger</button> </a>
+        <a href="#" th:href="@{/messengers/new}"><button>Create Message</button> </a>
 
     </body>
 

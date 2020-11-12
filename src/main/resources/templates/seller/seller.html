@@ -33,6 +33,36 @@
             </tr>
         </table> <br/>
 
+        <h2>Recieved Messages: </h2>
+        <table>
+            <tr>
+                <th>buyerId: </th>
+                <th>title: </th>
+                <th>message: </th>
+            </tr>
+
+            <tr th:each="message : ${seller.recievedMessages}">
+                <td th:text="${message.buyerId}"></td>
+                <td th:text="${message.title}"></td>
+                <td th:text="${message.body}"></td>
+            </tr>
+        </table> <br/>
+
+        <h2>Sent Messages: </h2>
+        <table>
+            <tr>
+                <th>buyerId: </th>
+                <th>title: </th>
+                <th>message: </th>
+            </tr>
+
+            <tr th:each="message : ${seller.sentMessages}">
+                <td th:text="${message.buyerId}"></td>
+                <td th:text="${message.title}"></td>
+                <td th:text="${message.body}"></td>
+            </tr>
+        </table> <br/>
+
         <a href="#" th:href="@{/sellers/edit/{id}(id=${seller.id})}"><button>Edit details</button> </a>
         <a href="#" th:href="@{/sellers/delete/{id}(id=${seller.id})}" methods="delete">
             <button>Delete Profile</button> </a>

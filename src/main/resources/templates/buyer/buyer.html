@@ -14,20 +14,35 @@
         <h1 th:text="'Buyer Profile for: ' + ${buyer.firstName} + ' ' + ${buyer.lastName}"></h1>
         <h3 th:text="${buyer.firstName}"></h3>
         <h3 th:text="${buyer.lastName}"></h3>
-        <h3 th:text="${buyer.email}"></h3>
+        <h3 th:text="${buyer.email}"></h3> <br/>
 
-        <h2>Messages: </h2>
+        <h2>Recieved Messages: </h2>
         <table>
             <tr>
-                <th>sellerFristName: </th>
-                <th>sellerLastName: </th>
+                <th>sellerId: </th>
+                <th>title: </th>
                 <th>message: </th>
             </tr>
 
-            <tr th:each="message : ${buyer.messages}">
-                <td th:text="${message.messageBody}"></td>
-                <td> <a href="#" th:href="@{/sellers/{id}(id=${message.sellerId})}">
-                    <button>See seller details</button> </a> </td>
+            <tr th:each="message : ${buyer.recievedMessages}">
+                <td th:text="${message.sellerId}"></td>
+                <td th:text="${message.title}"></td>
+                <td th:text="${message.body}"></td>
+            </tr>
+        </table> <br/>
+
+        <h2>Sent Messages: </h2>
+        <table>
+            <tr>
+                <th>sellerId: </th>
+                <th>title: </th>
+                <th>message: </th>
+            </tr>
+
+            <tr th:each="message : ${buyer.sentMessages}">
+                <td th:text="${message.sellerId}"></td>
+                <td th:text="${message.title}"></td>
+                <td th:text="${message.body}"></td>
             </tr>
         </table> <br/>
 

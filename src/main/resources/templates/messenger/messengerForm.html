@@ -11,11 +11,21 @@
 
     <body>
 
-        <h1>Create/Update Messenger</h1>
+        <h1>Create/Update Message</h1>
 
         <form action="#" th:action="@{/messengers/process}" th:object="${messenger}" method="post">
+            <label>Title: </label>
+            <input type="text" th:field="*{title}"/> <br/>
             <label>Message: </label>
-            <input type="text" th:field="*{messageBody}"/> <br/>
+            <input type="text" th:field="*{body}"/> <br/>
+            <label>sellerId: </label>
+            <input type="text" th:field="*{sellerId}"/> <br/>
+            <label>buyerId: </label>
+            <input type="text" th:field="*{buyerId}"/> <br/>
+            <label>toSeller: </label>
+            <input type="text" th:field="*{toSeller}"/> <br/>
+            <label>toBuyer: </label>
+            <input type="text" th:field="*{toBuyer}"/> <br/>
 
             <input type="submit" value="Submit"/>
         </form>

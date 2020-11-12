@@ -14,8 +14,11 @@ public class Messenger {
     @Getter
     private String id;
 
-    private String messageBody;
+    private String title;
+    private String body;
     private String sellerId;
     private String buyerId;
+    private String toSeller;
+    private String toBuyer;
 
 }

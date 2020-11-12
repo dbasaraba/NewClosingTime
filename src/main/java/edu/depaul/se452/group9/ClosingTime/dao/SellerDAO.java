@@ -31,9 +31,14 @@ public class SellerDAO {
                 filter(property -> !property.getSellerId().equals(seller.getId())).collect(Collectors.toList());
     }
 
-    public List<Messenger> getMessages(Seller seller) {
+    public List<Messenger> getSentMessages(Seller seller) {
         return messengerRepository.findAll().stream().
-                filter(property -> !property.getSellerId().equals(seller.getId())).collect(Collectors.toList());
+                filter(m -> !m.getSellerId().equals(seller.getId())).collect(Collectors.toList());
+    }
+
+    public List<Messenger> getRecievedMessages(Seller seller) {
+        return messengerRepository.findAll().stream().
+                filter(m -> !m.getToSeller().equals(seller.getId())).collect(Collectors.toList());
     }
 
     public Seller getSeller(String id) { return repository.findById(id).orElse(null); }

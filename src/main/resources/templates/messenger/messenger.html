@@ -11,11 +11,12 @@
 
     <body>
 
-        <h1>Messenger</h1>
-        <h3 th:text="${messenger.messageBody}"></h3>
-        <a href="#" th:href="@{/messengers/edit/{id}(id=${messenger.id})}"><button>Edit details</button> </a>
+        <h1>Message</h1>
+        <h3 th:text="${messenger.title}"></h3>
+        <h3 th:text="${messenger.body}"></h3>
+        <a href="#" th:href="@{/messengers/edit/{id}(id=${messenger.id})}"><button>Edit Message</button> </a>
         <a href="#" th:href="@{/messengers/delete/{id}(id=${messenger.id})}" methods="delete">
-            <button>Delete Profile</button> </a>
+            <button>Delete Message</button> </a>
 
     </body>
 

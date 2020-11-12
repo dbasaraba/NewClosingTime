@@ -32,7 +32,8 @@ public class SellerController {
     public String getSeller(@PathVariable("id") String id, Model model) {
         Seller seller = sellerDAO.getSeller(id);
         seller.setProperties(sellerDAO.getProperties(seller));
-        seller.setMessages(sellerDAO.getMessages(seller));
+        seller.setSentMessages(sellerDAO.getSentMessages(seller));
+        seller.setRecievedMessages(sellerDAO.getRecievedMessages(seller));
         model.addAttribute("seller", seller);
         return "seller/seller";
     }

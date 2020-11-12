@@ -21,9 +21,14 @@ public class BuyerDAO {
 
     public List<Buyer> getBuyers() { return repository.findAll(); }
 
-    public List<Messenger> getMessages(Buyer buyer) {
+    public List<Messenger> getSentMessages(Buyer buyer) {
         return messengerRepository.findAll().stream().
                 filter(m -> !m.getBuyerId().equals(buyer.getId())).collect(Collectors.toList());
+    }
+
+    public List<Messenger> getRecievedMessages(Buyer buyer) {
+        return messengerRepository.findAll().stream().
+                filter(m -> !m.getToBuyer().equals(buyer.getId())).collect(Collectors.toList());
     }
 
     public Buyer getBuyer(String id) { return repository.findById(id).orElse(null); }
