@@ -13,6 +13,10 @@
 
         <h1>Offer</h1>
         <h3 th:text="${offer.offer}"></h3>
+        <h2>Property</h2>
+        <h3 th:text="${offer.propertyId}"></h3>
+        <h2>Buyer</h2>
+        <h3 th:text="${offer.buyerId}"></h3>
         <a href="#" th:href="@{/offers/edit/{id}(id=${offer.id})}"><button>Edit details</button> </a>
         <a href="#" th:href="@{/offers/delete/{id}(id=${offer.id})}" methods="delete">
         <button>Delete Profile</button> </a>

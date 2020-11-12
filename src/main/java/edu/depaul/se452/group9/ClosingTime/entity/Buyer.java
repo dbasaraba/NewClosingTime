@@ -20,5 +20,6 @@ public class Buyer {
     private String email;
     private List<Messenger> sentMessages;
     private List<Messenger> recievedMessages;
+    private List<Offer> offers;
 
 }

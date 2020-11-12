@@ -30,7 +30,9 @@ public class PropertyController {
 
     @RequestMapping("/properties/{id}") // show single property
     public String getProperty(@PathVariable("id") String id, Model model) {
-        model.addAttribute("property", propertyDAO.getProperty(id));
+        Property property = propertyDAO.getProperty(id);
+        property.setOffers(propertyDAO.getOffers(property));
+        model.addAttribute("property", property);
         return "property/property";
     }
 

@@ -16,6 +16,19 @@
         <h3 th:text="${buyer.lastName}"></h3>
         <h3 th:text="${buyer.email}"></h3> <br/>
 
+        <h2>Placed Offers: </h2>
+        <table>
+            <tr>
+                <th>propertyId: </th>
+                <th>offer: </th>
+            </tr>
+
+            <tr th:each="offer : ${buyer.offers}">
+                <td th:text="${offer.propertyId}"></td>
+                <td th:text="${offer.offer}"></td>
+            </tr>
+        </table> <br/>
+
         <h2>Recieved Messages: </h2>
         <table>
             <tr>

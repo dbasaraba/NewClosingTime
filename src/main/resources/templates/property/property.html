@@ -15,7 +15,21 @@
         <h3 th:text="${property.state}"></h3>
         <h3 th:text="${property.city}"></h3>
         <h3 th:text="${property.streetAddress}"></h3>
-        <h3 th:text="${property.askingPrice}"></h3>
+        <h3 th:text="${property.askingPrice}"></h3> <br/>
+
+        <h2>Offers: </h2>
+        <table>
+            <tr>
+                <th>buyerId: </th>
+                <th>offer: </th>
+            </tr>
+
+            <tr th:each="offer : ${property.offers}">
+                <td th:text="${offer.buyerId}"></td>
+                <td th:text="${offer.offer}"></td>
+            </tr>
+        </table> <br/>
+
         <a href="#" th:href="@{/properties/edit/{id}(id=${property.id})}"><button>Edit details</button> </a>
         <a href="#" th:href="@{/properties/delete/{id}(id=${property.id})}" methods="delete">
             <button>Delete Property</button> </a>

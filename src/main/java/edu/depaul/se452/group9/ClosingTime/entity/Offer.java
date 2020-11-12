@@ -15,6 +15,7 @@ public class Offer {
     private String id;
 
     private String buyerId;
+    private String propertyId;
 
     public int offer;
 

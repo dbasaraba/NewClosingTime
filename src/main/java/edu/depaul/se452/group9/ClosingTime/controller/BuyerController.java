@@ -30,6 +30,7 @@ public class BuyerController {
         Buyer buyer = buyerDAO.getBuyer(id);
         buyer.setSentMessages(buyerDAO.getSentMessages(buyer));
         buyer.setRecievedMessages(buyerDAO.getRecievedMessages(buyer));
+        buyer.setOffers(buyerDAO.getOffers(buyer));
         model.addAttribute("buyer", buyer);
         return "buyer/buyer";
     }

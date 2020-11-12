@@ -14,8 +14,12 @@
         <h1>Create/Update Offer</h1>
 
         <form action="#" th:action="@{/offers/process}" th:object="${offer}" method="post">
-            <label>First Name: </label>
+            <label>Offer: </label>
             <input type="text" th:field="*{offer}"/> <br/>
+            <label>buyerId: </label>
+            <input type="text" th:field="*{buyerId}"/> <br/>
+            <label>propertyId: </label>
+            <input type="text" th:field="*{propertyId}"/> <br/>
 
             <input type="submit" value="Submit"/>
         </form>
