@@ -31,7 +31,9 @@
                 <td th:text="${property.askingPrice}"></td>
                 <td th:text="${property.sellerId}"></td>
                 <td> <a href="#" th:href="@{/properties/{id}(id=${property.id})}">
-                <button>See property details</button> </a> </td>
+                    <button>See property details</button> </a> </td>
+                <td> <a href="#" th:href="@{/sellers/{id}(id=${property.sellerId})}">
+                    <button>See seller details</button> </a> </td>
             </tr>
         </table> <br/>
 

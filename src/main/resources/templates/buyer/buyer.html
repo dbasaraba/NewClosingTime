@@ -15,6 +15,22 @@
         <h3 th:text="${buyer.firstName}"></h3>
         <h3 th:text="${buyer.lastName}"></h3>
         <h3 th:text="${buyer.email}"></h3>
+
+        <h2>Messages: </h2>
+        <table>
+            <tr>
+                <th>sellerFristName: </th>
+                <th>sellerLastName: </th>
+                <th>message: </th>
+            </tr>
+
+            <tr th:each="message : ${buyer.messages}">
+                <td th:text="${message.messageBody}"></td>
+                <td> <a href="#" th:href="@{/sellers/{id}(id=${message.sellerId})}">
+                    <button>See seller details</button> </a> </td>
+            </tr>
+        </table> <br/>
+
         <a href="#" th:href="@{/buyers/edit/{id}(id=${buyer.id})}"><button>Edit details</button> </a>
         <a href="#" th:href="@{/buyers/delete/{id}(id=${buyer.id})}" methods="delete">
             <button>Delete Profile</button> </a>

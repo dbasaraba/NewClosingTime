@@ -27,7 +27,9 @@ public class BuyerController {
 
     @RequestMapping("/buyers/{id}") // show single buyer
     public String getBuyer(@PathVariable("id") String id, Model model) {
-        model.addAttribute("buyer", buyerDAO.getBuyer(id));
+        Buyer buyer = buyerDAO.getBuyer(id);
+        buyer.setMessages(buyerDAO.getMessages(buyer));
+        model.addAttribute("buyer", buyer);
         return "buyer/buyer";
     }
 

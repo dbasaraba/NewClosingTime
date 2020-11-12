@@ -14,7 +14,7 @@ public class Offer {
     @Getter
     private String id;
 
-    private Buyer buyer;
+    private String buyerId;
 
     public int offer;
 

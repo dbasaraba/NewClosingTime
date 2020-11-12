@@ -15,7 +15,7 @@ public class Messenger {
     private String id;
 
     private String messageBody;
-    private Seller seller;
-    private Buyer buyer;
+    private String sellerId;
+    private String buyerId;
 
 }
