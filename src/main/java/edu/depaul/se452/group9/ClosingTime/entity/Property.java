@@ -18,9 +18,9 @@ public class Property {
     private String state;
     private String city;
     private String streetAddress;
+    private String sellerId;
+    private List<Offer> offers;
 
     private int askingPrice;
-
-    private List<Offer> offers;
 
 }

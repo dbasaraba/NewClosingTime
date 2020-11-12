@@ -20,6 +20,7 @@
                 <th>city: </th>
                 <th>streetAddress: </th>
                 <th>askingPrice: </th>
+                <th>sellerId: </th>
             </tr>
 
             <tr th:each="property : ${properties}">
@@ -28,6 +29,7 @@
                 <td th:text="${property.city}"></td>
                 <td th:text="${property.streetAddress}"></td>
                 <td th:text="${property.askingPrice}"></td>
+                <td th:text="${property.sellerId}"></td>
                 <td> <a href="#" th:href="@{/properties/{id}(id=${property.id})}">
                 <button>See property details</button> </a> </td>
             </tr>

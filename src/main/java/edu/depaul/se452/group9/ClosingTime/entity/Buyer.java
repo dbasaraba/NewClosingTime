@@ -18,8 +18,6 @@ public class Buyer {
     private String firstName;
     private String lastName;
     private String email;
-
-    private List<Property> favorites;
     private List<Messenger> messages;
 
 }

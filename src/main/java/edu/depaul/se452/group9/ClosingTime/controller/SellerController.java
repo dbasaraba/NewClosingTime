@@ -30,7 +30,9 @@ public class SellerController {
 
     @RequestMapping("/sellers/{id}") // show single seller
     public String getSeller(@PathVariable("id") String id, Model model) {
-        model.addAttribute("seller", sellerDAO.getSeller(id));
+        Seller seller = sellerDAO.getSeller(id);
+        seller.setProperties(sellerDAO.getProperties(seller));
+        model.addAttribute("seller", seller);
         return "seller/seller";
     }
 

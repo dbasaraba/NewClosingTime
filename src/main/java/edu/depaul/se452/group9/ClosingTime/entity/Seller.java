@@ -18,7 +18,6 @@ public class Seller {
     private String firstName;
     private String lastName;
     private String email;
-
     private List<Property> properties;
     private List<Messenger> messages;
 
