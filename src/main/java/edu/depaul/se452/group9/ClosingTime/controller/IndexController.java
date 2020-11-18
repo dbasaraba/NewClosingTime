@@ -23,10 +23,7 @@ public class IndexController {
         return "header";
     }
 
-    @GetMapping("/buy")
-    String buy(){
-        return "buy";
-    }
+
 
     @GetMapping("/favorites")
     String favorites(){

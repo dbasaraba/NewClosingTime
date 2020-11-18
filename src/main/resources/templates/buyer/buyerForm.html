@@ -6,13 +6,15 @@
 
         <meta charset = "UTF-8">
         <title>Create/Update Buyer</title>
+        <div th:replace="/header :: Header"> </div>
 
     </head>
 
     <body>
+    <div th:replace="/header :: header"> </div>
 
+    <div class="container">
         <h1>Create/Update Buyer</h1>
-
         <form action="#" th:action="@{/buyers/process}" th:object="${buyer}" method="post">
             <label>First Name: </label>
             <input type="text" th:field="*{firstName}"/> <br/>
@@ -23,6 +25,7 @@
 
             <input type="submit" value="Submit"/>
         </form>
+    </div>
 
     </body>
 

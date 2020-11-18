@@ -55,4 +55,12 @@ public class PropertyController {
         return "redirect:/properties";
     }
 
+
+    @RequestMapping("/buy")
+    public String displayProperties( Model model){
+        model.addAttribute("properties",propertyDAO.getProperties());
+        return "buy";
+    }
+
+
 }
