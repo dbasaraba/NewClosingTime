@@ -28,12 +28,12 @@ public class BuyerDAO {
 
     public List<Messenger> getSentMessages(Buyer buyer) {
         return messengerRepository.findAll().stream().
-                filter(m -> !m.getBuyerId().equals(buyer.getId())).collect(Collectors.toList());
+                filter(m -> m.getBuyerId().equals(buyer.getId())).collect(Collectors.toList());
     }
 
     public List<Messenger> getRecievedMessages(Buyer buyer) {
         return messengerRepository.findAll().stream().
-                filter(m -> !m.getToBuyer().equals(buyer.getId())).collect(Collectors.toList());
+                filter(m -> m.getToBuyer().equals(buyer.getId())).collect(Collectors.toList());
     }
 
     public List<Offer> getOffers(Buyer buyer) {
